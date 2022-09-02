@@ -1,0 +1,60 @@
+
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    font-weight: bold;
+    background-color: darkcyan;
+    position: relative;
+    height: 100vh;
+    color: wheat;
+}
+
+input[type=checkbox], input[type=checkbox]:checked {
+    -moz-appearance:none;
+    -webkit-appearance: none;
+    -o-appearance:none;
+  }
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: grey;
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: 0 0 24px black;
+}
+
+form>* {
+    display: block;
+    margin: 0 auto;
+}
+
+label {
+    text-align: center;
+}
+
+input{
+    border: none;
+    outline: none;
+    margin-bottom: 1em;
+    margin-top: .5em;
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+input[type=checkbox] {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 0 8px black;
+    font-size: larger;
+}
+
+input[type=checkbox]:checked {
+    background-color: limegreen;
+}
