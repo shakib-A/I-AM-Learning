@@ -69,3 +69,31 @@ body {
     grid-row: 1 / 5 ;
     background-color: rgb(241, 100, 100);
 }
+
+div {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    box-sizing: border-box;
+    height: 100px;
+    display: block;
+    border: 2px black solid;
+    margin-bottom: 1em;
+    padding: 12px;
+
+}
+
+#input-1 {
+    height: 50%;
+    margin: 0;
+    padding-top: 8px;
+    padding-left: 8px;
+    background-color: rgb(214, 214, 214);
+    font-weight: normal;
+}
+
+#input-2 {
+    padding-top: 8px;
+    height: 50%;
+    margin: 0;
+}
