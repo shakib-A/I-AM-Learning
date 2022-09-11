@@ -1,43 +1,60 @@
-const numButtons = document.querySelectorAll('.item')
+class Calculator {
+    constructor(dispOne, dispTwo) {
+        this.dispOne = dispOne
+        this.dispTwo = dispTwo
+    }
 
-let displayOne = document.querySelector('#input-1')
-let displayTwo = document.querySelector('#input-2')
+    clearAll() {
+      this.dispTwo.innerHTML = ""
+      this.dispOne.innerHTML = ""
+    }
 
+    sumUp() {
+
+    }
+
+    minus() {
+
+    }
+
+    operate() {
+
+    }
+
+    updateDisplays() {
+        if(dispTwo) {
+
+        }
+    }
+}
+
+const numberButton = document.querySelectorAll('.item')
+const equalButton = document.querySelector('.equals')
 const plusButton = document.querySelector('.plus')
 const minusButton = document.querySelector('.minus')
-const equalButton = document.querySelector('.equals')
-const acButton =document.querySelector('.ac')
+const acButton = document.querySelector('.ac')
+const dispOne = document.querySelector('#input-1')
+const dispTwo = document.querySelector('#input-2')
 
-let numArray = [];
 
-for(let i = 0; i < numButtons.length; i++) {
-    numButtons[i].addEventListener('click', function fun1(){
-        displayTwo.innerHTML += numButtons[i].value
+const calculate = new Calculator(dispOne, dispTwo)
+console.log(calculate)
+
+for(let i = 0; i < numberButton.length; i++) {
+    numberButton[i].addEventListener('click', function numberClicked(){
+        dispTwo.innerHTML += numberButton[i].value
     })
 }
 
-plusButton.addEventListener('click', function fun2(){
-   if(displayTwo.innerHTML !== "" && displayOne.innerHTML == "") {
-        numArray.push(parseInt(displayTwo.innerHTML))
-        displayOne.innerHTML = parseInt(displayTwo.innerHTML) + " + "
-        displayTwo.innerHTML = ""
-        console.log(numArray)
-   } else if(displayOne.innerHTML !== "" && displayTwo.innerHTML !== "") {
-    let sum = numArray[0] + parseInt(displayTwo.innerHTML)
-    numArray[0] = sum
-    displayOne.innerHTML = `${sum} +`
-    displayTwo.innerHTML = ""
-   }
+plusButton.addEventListener('click', () => {
+    calculate.updateDisplays()
 })
 
-minusButton.addEventListener('click', function fun3(){
-    
+equalButton.addEventListener('click', () => {
+    calculate.operate()
+    calculate.updateDisplays()
 })
 
-equalButton.addEventListener('click', function fun4(){
-    
-})
-
-acButton.addEventListener('click', function fun5(){
-    
+acButton.addEventListener('click', () => {
+    calculate.clearAll() 
 })
