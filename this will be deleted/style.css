@@ -1,0 +1,77 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: smaller;
+    font-weight: normal;
+}
+
+.slider {
+    /* border: 2px solid red; */
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+}
+
+.slide {
+    /* background-color: limegreen; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: opacity .4s ease-in-out;
+}
+
+.content {
+    width: 70%;
+    margin-left: 10%;
+}
+
+.current-slide {
+    opacity: 1;
+}
+
+/* background images */
+.slide:first-child {
+    background: url(./imgs/medium-shot-business-women-high-five.jpeg) no-repeat  center 20%/cover;
+}
+.slide:nth-child(2) {
+    background: url(./imgs/team-meeting-renewable-energy-project.jpeg) no-repeat center center/cover;
+}
+.slide:nth-child(3) {
+    background: url(./imgs/two-business-partners-working-together-office-computer.jpeg) no-repeat center top/cover;
+}
+
+.tracker-buttons {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.tracker-btn {
+    padding: 6px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, 0.35);
+}
+
+.tracker-btn:hover,
+.current-btn {
+    background: white;
+}
+
