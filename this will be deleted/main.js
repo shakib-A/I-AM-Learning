@@ -1,18 +1,58 @@
+const trackerButtons = document.querySelectorAll('.tracker-btn')
+const slide = document.querySelectorAll('.slide')
+const intervalTime = 5000;
 
+trackerButtons.forEach(element => {
+    element.addEventListener('click', function fun1(){
+        //clear the interval at each click and start it again
+        clearInterval(myInterval)
+        myInterval = setInterval(() => {
+            const currentButton = document.querySelector('.current-btn')
+            const currentSlide = document.querySelector('.current-slide')
+            if(currentButton.classList.contains('third-btn')){
+                currentButton.classList.remove('current-btn')
+                currentSlide.classList.remove('current-slide')
+                trackerButtons[0].classList.add('current-btn')
+                slide[0].classList.add('current-slide')
+            }
+            currentButton.classList.remove('current-btn')
+            currentButton.nextElementSibling.classList.add('current-btn')
+            currentSlide.classList.remove('current-slide')
+            currentSlide.nextElementSibling.classList.add('current-slide')
+            
+        }, intervalTime);
 
-function fun1(arr, target) {
-    let results = [];
+        const currentButton = document.querySelector('.current-btn')
+        currentButton.classList.remove('current-btn')
+        element.classList.add('current-btn')
 
-    for(let i = 0; i < arr.length; i++) {
-       for(let j = i+1; j < arr.length; j++) {
-        if(arr[i]+arr[j] === target) {
-            results.push(arr[i])
-            results.push(arr[j])
+        const currentSlide = document.querySelector('.current-slide')
+        currentSlide.classList.remove('current-slide')
+
+        // these if statements matches the current-btn to current-slide
+        if(document.querySelector('.first-btn').classList.contains('current-btn')) {
+            slide[0].classList.add('current-slide')
+        } else if(document.querySelector('.second-btn').classList.contains('current-btn')) {
+            slide[1].classList.add('current-slide')
+        } else {
+            slide[2].classList.add('current-slide')
         }
-       }
-    }
-    return results
-}
+        
+    })
+})
 
-console.log(fun1([9,1,3,4,5], 6))
-console.log(fun1([1,2,3,4,5], 10))   
+myInterval = setInterval(() => {
+    const currentButton = document.querySelector('.current-btn')
+    const currentSlide = document.querySelector('.current-slide')
+    if(currentButton.classList.contains('third-btn')){
+        currentButton.classList.remove('current-btn')
+        currentSlide.classList.remove('current-slide')
+        trackerButtons[0].classList.add('current-btn')
+        slide[0].classList.add('current-slide')
+    }
+    currentButton.classList.remove('current-btn')
+    currentButton.nextElementSibling.classList.add('current-btn')
+    currentSlide.classList.remove('current-slide')
+    currentSlide.nextElementSibling.classList.add('current-slide')
+    
+}, intervalTime);
