@@ -120,17 +120,398 @@ a {
     transform: translate(0 , -150%);
 }
 
-section .hero{
-    position: relative;
-    
-}
 
+
+/* carousel */
 .carousel {
-    width: 100vw;
-    height: 80vh;
-    display: block;
+    height: 100vh;
+    position: relative;
 }
 
+
+.slide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+
+}
+
+.gradient {
+    background-image: linear-gradient(to top,rgba(0,0,0),rgba(0,0,0,.6));
+    opacity: .5;
+}
+
+.current-slide {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+}
+
+/* background images */
+.slide:first-child { background: url(./imgs/medium-shot-business-women-high-five.jpeg) no-repeat center top/cover;}
+.slide:nth-child(2) { background: url(./imgs/team-meeting-renewable-energy-project.jpeg) no-repeat center center/cover;}
+.slide:nth-child(3) { background: url(./imgs/two-business-partners-working-together-office-computer.jpeg) no-repeat center center/cover;}
+
+
+.tracker-buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+}
+
+.tracker-btn {
+    border: none;
+    outline: none;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 6px solid rgba(255, 255, 255, .5);
+    cursor: pointer;
+}
+
+.tracker-btn:hover {
+    background-color: white;
+}
+
+.current-btn {
+    background-color: white;
+}
+
+.slide .content {
+    color: white;
+    font-family: inherit;
+    max-width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.content h1 {
+    font-size: 4em;
+}
+
+.content p {
+    font-size: 20px;
+    margin-bottom: 1em;
+    color: var(--list-text-color);
+}
+
+.content-btn {
+    padding: 1.25em 2em;
+    border-radius: 2em;
+    border: none;
+    outline: none;
+    background-color: var(--footer-bg-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 150ms linear;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.content-btn:hover {
+   background-color: #FF4400;
+   transition: background-color 150ms linear;
+}
+
+/* get started */
+.get-started {
+    padding: 7em 0;
+    margin: 0 2em;
+}
+.get-started h1{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1em;
+    font-size: 42px;
+    font-weight: 900;
+}
+.get-started h1 span{
+    color: var(--text-selection-color);
+}
+.get-started .container{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.get-started ul li{
+    min-width: 130%;
+    line-height: 2em;
+    padding-left: 1em;
+    border-left: 2px solid var(--list-text-color);
+}
+.get-started ul li a{
+    color: var(--list-text-color);
+    font-size: 1em;
+}
+.get-started .article {
+    /* border: 2px solid blue; */
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 400px;
+    min-width: 350px;
+    position: relative;
+}
+.get-started .article h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+}
+.get-started .article h2 span {
+    color: var(--text-selection-color);
+}
+.get-started .article p {
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--article-text-color);
+}
+.get-started .article a {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 10%;
+}
+.get-started .article a::after {
+    content: '→';
+    opacity: 0;
+    margin-left: 1em;
+    transition: color,opacity 300ms ease-in-out;
+}
+.get-started .article a:hover,
+.get-started .article a:hover::after {
+    opacity: 1;
+    color: var(--text-selection-color);
+    transition: color,opacity 300ms ease-in-out;
+}
+
+/* Retail */
+.retail-shop .container {
+    /* border: 2px solid red; */
+    background-color: #F0F8FF;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.retail-shop img {
+    justify-self: flex-start;
+    height: 100%;
+}
+.retail-shop .content {
+    padding: 0 3rem;
+}
+.retail-shop .content h2 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+}
+.retail-shop .content h2 span {
+    color: var(--text-selection-color);
+}
+.retail-shop .content p {
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-bottom: 1.5rem;
+    color: #717275;
+}
+.retail-shop .content a {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    transition: color,opacity 300ms ease-in-out;
+}
+.retail-shop .content a::after {
+    content: '→';
+    margin-left: 1em;
+    opacity: 0;
+    transition: color,opacity 300ms ease-in-out;
+
+}
+.retail-shop .content a:hover::after,
+.retail-shop .content a:hover {
+    color: var(--text-selection-color);
+    opacity: 1;
+    transition: color,opacity 300ms ease-in-out;
+}
+
+/* Featured Products */
+.featured-products .container {
+    /* border: solid 2px red; */
+    padding: 7rem 0;
+}
+.featured-products .container h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 3rem;
+}
+.featured-products .container .product-box {
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.featured-products .container .product-box .product{
+    padding: 0 1.5rem;
+}
+.featured-products .container .product-box .card{
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+/* card background-images */
+.featured-products .product-box .first .card {background: url(./imgs/flower-pot.jpeg) no-repeat center center/cover;}
+.featured-products .product-box .second .card {background: url(./imgs/Tshirt.jpeg) no-repeat center center/cover;}
+.featured-products .product-box .third .card {background: url(./imgs/drinks.jpeg) no-repeat center center/cover;}
+
+.featured-products .product {
+    display: inline-block;
+}
+.card .tag {
+    background-color: white;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    padding: 1em;
+}
+.card a::before {
+    font-family: "font Awesome 5 free";
+    font-weight: 600;
+    content: "\f004";
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    transition: color 150ms ease-in-out;
+}
+.card a:hover::before {
+    color: red;
+    transition: color 150ms ease-in-out;
+}
+.product .info {
+    /* border: 2px solid green; */
+    padding: 20px 30px;
+    position: relative;
+}
+.product .info .name a {
+    color: var(--header-text-color);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 2;
+    transition: color 300ms ease-in-out;
+}
+.product .info .name a:hover {
+    color: var(--text-selection-color);
+    transition: color 300ms ease-in-out;
+}
+.product .info .name p {
+    color: #717275;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+.product .info .price {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-size: .875rem;
+}
+
+/* footer */
+footer .container {
+    background-color: black;
+    padding: 5rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+footer .container .little-fashion {
+    align-self: stretch;
+}
+footer .container .little-fashion h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+footer .container .little-fashion h1 span {
+    color: var(--article-text-color);
+    transition:color 300ms ease-in-out;
+    cursor: pointer;
+
+}
+footer .container .little-fashion h1 span:hover {
+    color: var(--text-selection-color);
+    transition:color 300ms ease-in-out;
+}
+footer .container .little-fashion p {
+    color: var(--article-text-color);
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+footer .container .sitemap p {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+footer .container .sitemap ul li a {
+    font-size: 1rem;
+    font-weight: 300;
+}
+footer .container .sitemap ul li {
+    margin: 1.25rem 0;
+}
+footer .container .links ul li {
+    margin: 1.25rem 0;
+}
+footer .container .social {
+    align-self: stretch;
+}
+footer .container .social p{
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+/* social icons */
+.social ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.social ul li{
+    margin-left: 1rem;
+    font-size: 1.25rem;
+}
+footer .container  a {
+    transition: color 300ms ease-in-out;
+}
+footer .container  a:hover {
+    color: white;
+    transition: color 300ms ease-in-out;
+}
+
+/* media queries responsivness  */
 @media all and (max-width: 990px) {
     
     .toggle-button {
@@ -157,6 +538,7 @@ section .hero{
         display: flex;
         transform-origin: center top;
         transition: transform .15s linear;
+        z-index: 2;
     }
 
     .nav-links-media.inactive {
