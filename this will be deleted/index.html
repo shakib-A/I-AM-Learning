@@ -4,94 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *,*::after, *::before {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        body{
-            background-color: #333;
-            color: white;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        #btn{
-            margin-top: 1em;
-            /* position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%); */
-            border: none;
-            outline: none;
-            padding: 2em 4em;
-            border-radius: 4em;
-            background-color: tomato;
-            color: white;
-            font-size: 1em;
-            text-transform: uppercase;
-            box-shadow: 6px 3px 12px red;
-            transition:box-shadow 200ms ease-in-out;
-            cursor: pointer;
-        }
-        #btn:hover{
-            box-shadow: 12px 6px 12px red;
-            transition:box-shadow 200ms ease-in-out;
-        }
-        .container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1em;
-            gap: 1em;
-        }
-        img{
-            width: 150px;
-            height: 150px;
-        }
-        ul{
-            background-color: yellowgreen;
-            padding: 1em 2em;
-            min-width: 80vw;
-            list-style: none;
-            color: #333;
-            font-size: 1em;
-            font-weight: bold;
-            text-transform: capitalize;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
+    <title>Learning Promise</title>
 </head>
 <body>
-    <button id="btn">random users</button>
-    <div class="append"></div>
+    
 </body>
-
-<script>
-    document.querySelector('#btn').addEventListener('click',addUser)
-
-function addUser() {
-    const xhr = new XMLHttpRequest()
-    xhr.open('GET', "users.json", true)
-    xhr.onload = function(){
-            var users = JSON.parse(this.responseText)
-        var randomUser = Math.round(Math.random()*30)
-        output = ""
-        output += `<div class="container">
-                        <img src="${users[randomUser].avatar_url}">
-                        <ul>
-                            <li>ID: ${users[randomUser].id}</li>
-                            <li>UserName: ${users[randomUser].login}</li>
-                            <li>UserType: ${users[randomUser].type}</li>
-                        </ul>
-                   </div>`
-                   document.querySelector('.append').innerHTML += output
-     }
-
-    xhr.send()
-}
-</script>
 </html>
