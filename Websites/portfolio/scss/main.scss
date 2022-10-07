@@ -1,0 +1,74 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #4eacdd;
+    color: white;
+    padding-bottom: 10rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        display: inline-block;
+        padding: 1rem;
+        background-color: white;
+        color: #4eacdd;
+        font-size: 50px;
+        box-shadow: 12px 6px 0px #0da9e5;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        cursor: pointer;
+
+        &__line {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+    }
+}
+
+.content {
+    text-align: right;
+    line-height: 2;
+    margin-top: 1rem;
+
+    .btn {
+        display: inline;
+        border: 2px solid white;
+        padding: 4px 1rem;
+        cursor: pointer;
+
+        &__text {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+    }
+}
+
+.img {
+    display: block;
+    background-size: cover;
+    position: absolute;
+    bottom: -45%;
+    left: 15%;
+}
