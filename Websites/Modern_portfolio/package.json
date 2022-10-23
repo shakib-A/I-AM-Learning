@@ -1,14 +1,14 @@
 {
-  "name": "portfolio2",
+  "name": "modern_portfolio",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css"
+    "sass": "node-sass -w scss/ -o dist/css --recursive"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "description": "",
   "dependencies": {
     "node-sass": "^7.0.3"
   }
