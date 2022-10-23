@@ -1,0 +1,117 @@
+@import 'colors';
+@import 'config';
+
+.nav {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    visibility: hidden;
+
+    &__btn {
+        display: inline-block;
+        position: fixed;
+        top: 35px;
+        right: 35px;
+        cursor: pointer;
+        @include transition;
+        visibility: visible;
+        z-index: 2;
+    }
+
+    &__btn-line {
+        width: 30px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: white;
+        border-radius: 3px;
+        @include transition;
+    }
+
+    &__branding {
+        visibility: hidden;
+        width: 50%;
+        height: 100vh;
+        background-color: rgba($dark-bg, $alpha: 0.8);
+        @include center;
+        transform: translateY(100%);
+        @include transition;
+    }
+
+    &__branding-img {
+        height: 200px;
+        width: 200px;
+        background: url(/Websites/Modern_portfolio/dist/img/portrait.jpg) center center/cover;
+        border-radius: 50%;
+        border: $primary-color 2px solid;
+    }
+
+    &__menu {
+        visibility: hidden;
+        width: 50%;
+        height: 100vh;
+        right: 0;
+        background-color: rgba($light-bg, $alpha: 0.8);
+        @include center;
+        transform: translateY(-100%);
+        @include transition;
+    }
+
+    &__list {
+        list-style: none;
+        text-align: center;
+    }
+
+    &__item {
+        text-transform: uppercase;
+        margin: 2rem 0;
+        font-size: larger;
+        font-weight: 500;
+        cursor: pointer;
+        @include transition;
+
+        &:hover {
+            transform: scale(1.25);
+            @include transition;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $light-text;
+
+        &:hover {
+            transform: scale(1.25);
+            color: $secondary-color;
+            @include transition;
+        }
+
+        &--current {
+            color: $primary-color;
+        }
+    }
+}
+
+.show {
+    visibility: visible;
+    transform: translateY(0);
+    @include transition;
+}
+
+.close {
+    transform: rotate(180deg);
+
+    .nav__btn-line {
+        &:nth-child(1) {
+            transform: translate3d(0, 8px, 0) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+            // background-color: red;
+            transform:translate3d(0, -8px, 0) rotate(-45deg);
+        }
+    }
+}
