@@ -1,0 +1,131 @@
+.nav {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  visibility: hidden; }
+  .nav__btn {
+    display: inline-block;
+    position: fixed;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+    transition: all 500ms ease-out;
+    visibility: visible;
+    z-index: 2; }
+  .nav__btn-line {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 500ms ease-out; }
+  .nav__branding {
+    visibility: hidden;
+    width: 50%;
+    height: 100vh;
+    background-color: rgba(57, 62, 65, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: all 500ms ease-out; }
+  .nav__branding-img {
+    height: 200px;
+    width: 200px;
+    background: url(/Websites/Modern_portfolio/dist/img/portrait.jpg) center center/cover;
+    border-radius: 50%;
+    border: #E7BB41 2px solid; }
+  .nav__menu {
+    visibility: hidden;
+    width: 50%;
+    height: 100vh;
+    right: 0;
+    background-color: rgba(134, 135, 134, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: all 500ms ease-out; }
+  .nav__list {
+    list-style: none;
+    text-align: center; }
+  .nav__item {
+    text-transform: uppercase;
+    margin: 2rem 0;
+    font-size: larger;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 500ms ease-out; }
+    .nav__item:hover {
+      transform: scale(1.25);
+      transition: all 500ms ease-out; }
+  .nav__link {
+    text-decoration: none;
+    color: #fff; }
+    .nav__link:hover {
+      transform: scale(1.25);
+      color: #43ba4f;
+      transition: all 500ms ease-out; }
+    .nav__link--current {
+      color: #E7BB41; }
+
+.show {
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 500ms ease-out; }
+
+.close {
+  transform: rotate(180deg); }
+  .close .nav__btn-line:nth-child(1) {
+    transform: translate3d(0, 8px, 0) rotate(45deg); }
+  .close .nav__btn-line:nth-child(2) {
+    opacity: 0; }
+  .close .nav__btn-line:nth-child(3) {
+    transform: translate3d(0, -8px, 0) rotate(-45deg); }
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  background: url(/Websites/Modern_portfolio/dist/img/background.jpg) no-repeat center center/cover;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400; }
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; }
+  .home .intro {
+    line-height: 1.5;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 1rem; }
+    .home .intro__heading {
+      text-transform: capitalize;
+      font-size: 3rem;
+      font-weight: bolder; }
+    .home .intro__span {
+      color: #E7BB41; }
+    .home .intro__text {
+      font-size: .8rem;
+      padding-left: 1rem; }
+    .home .intro__social-icons {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-top: 1rem; }
+    .home .intro__icon {
+      transition: all 500ms ease-out;
+      font-size: 1.5rem;
+      cursor: pointer; }
+      .home .intro__icon:hover {
+        color: #E7BB41;
+        transition: all 500ms ease-out; }
